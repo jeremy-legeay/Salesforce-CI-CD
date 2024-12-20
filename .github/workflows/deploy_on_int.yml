@@ -118,7 +118,13 @@ jobs:
             # This is an awesome plugin that allows us to extract a package.xml with the metadata
             # that has changed between commits. I highly recommend going over the github readme 
             # for more information on how this works.
-
+            
+            - name: 'Force correct Node.js version'
+              run: |
+                source ~/.nvm/nvm.sh
+                nvm install 20
+                nvm use 20
+                node -v
             
             # Vérifie la version de Node.js pour confirmer
             - name: Check Node.js version
